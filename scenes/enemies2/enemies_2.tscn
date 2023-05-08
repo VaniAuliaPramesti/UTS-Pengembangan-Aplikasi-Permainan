@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgbacljq2av1n"]
+
+[ext_resource type="Script" path="res://scenes/enemies2/enemies_2.gd" id="1_d5nxm"]
+[ext_resource type="Texture2D" uid="uid://ca3bbsd1dbca0" path="res://scenes/enemies2/Untitled 05-07-2023 03-26-34.png" id="2_b7p8i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d4eai"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6f75f"]
+radius = 13.0384
+
+[node name="Enemies2" type="CharacterBody2D" groups=["enemies2"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_d5nxm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.250006, 0.749999)
+scale = Vector2(0.0517578, 0.0517578)
+texture = ExtResource("2_b7p8i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d4eai")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6f75f")
